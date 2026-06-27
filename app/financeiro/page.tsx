@@ -303,7 +303,7 @@ function FinanceiroContent() {
         if (editingType === 'receita' && editingInstallments.length > 0) {
           // Salvar todas as parcelas atualizadas
           for (const inst of editingInstallments) {
-            let dbStatus = inst.ui_status;
+            let dbStatus: string | undefined = inst.ui_status;
             if (inst.ui_status === 'Pago') {
               const dueDateStr = inst.date ? inst.date.split('T')[0] : '';
               const payDateStr = inst.ui_payment_date || '';
